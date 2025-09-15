@@ -1,0 +1,46 @@
+/*
+Read the variables defined in the config.toml file and define the corresponding
+SCSS variables. This is achieved by `resources.ExecuteAsTemplate` in the <head>;
+warnings by a linter that the following is not valid SCSS can be ignored.
+*/
+
+$title-font: {{ .Site.Params.typography.title_font | default "Bree Serif" }};
+$body-font: {{ .Site.Params.typography.body_font | default "Source Sans Pro" }};
+
+// Prefer site params; fall back to a refined, professional palette
+// Note: We override below to enforce a cohesive palette for this portfolio.
+$background-color: {{ .Site.Params.colors.background_color | default "#301121" }}; // rgb(48,17,33)
+$text-color: {{ .Site.Params.colors.text_color | default "#EDE9F2" }};         // soft near-white for dark bg
+$link-color: {{ .Site.Params.colors.link_color | default "#7DD3FC" }};         // professional cyan accent
+$name-blur-color: {{ .Site.Params.colors.name_blur_color | default "#CDB4DB" }}; // muted mauve for headings
+
+$dark-background-color: {{ .Site.Params.colors.dark_background_color | default "#301121" }};
+$dark-text-color: {{ .Site.Params.colors.dark_text_color | default "#EDE9F2" }};
+$dark-name-blur-color: {{ .Site.Params.colors.dark_name_blur_color | default "#BDA4C1" }};
+
+// Enforce the new palette even if params provide different values
+$background-color: rgb(48, 17, 33);
+$text-color: #EDE9F2;
+$link-color: #7DD3FC;
+$name-blur-color: #CDB4DB;
+
+$dark-background-color: rgb(48, 17, 33);
+$dark-text-color: #EDE9F2;
+$dark-name-blur-color: #BDA4C1;
+
+
+
+
+/*
+Load the rest of the stylesheets.
+*/
+
+@import "_default.scss";
+@import "code.scss";
+@import "footer.scss";
+@import "header.scss";
+@import "navigation.scss";
+@import "landing_page.scss";
+@import "main.scss";
+@import "post.scss";
+@import "typography.scss";

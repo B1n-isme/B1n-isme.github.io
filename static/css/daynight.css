@@ -1,0 +1,283 @@
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-slot {
+  position: relative;
+  width: 80px; /* Set a default button width */
+  height: 40px;  /* Set a default button height (2:1 ratio) */
+  border: 3.2px solid #e4e7ec;
+  border-radius: 50px;
+  background-color: white;
+  transition: background-color 250ms, box-shadow 500ms cubic-bezier(.26,2,.46,.71);
+  display: flex;
+  pointer-events: all;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: #374151;
+  box-shadow: 0px 0.3vw 0.78vw #e4e7ec;
+}
+
+.toggle-button {
+  /* transform: translate(11.75em, 1.75em); */
+  position: absolute;
+  height: 65%;
+  width: 30%;
+  border-radius: 100%;
+  background-color: #34d399; /* emerald-400 */
+  box-shadow: inset 0px 0px 0px 2.7px #10b981; /* emerald-500 */
+  transition: background-color 250ms, border-color 250ms, left 250ms;
+
+  top: 50%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #485367;
+  box-shadow: inset 0px 0px 0px 2.7px white;
+  left: 27%;
+}
+
+.sun-icon {
+  position: absolute;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  color: #10b981;
+}
+
+.sun-icon-wrapper {
+  position: absolute;
+  height: 60%;
+  width: 28.3%;
+  top: 50%;       /* center */
+  left: 25%;
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, left 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  left: 75%;
+}
+
+.moon-icon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: white;
+  left: 0%;
+}
+
+.moon-icon-wrapper {
+  position: absolute;
+  height: 60%;
+  width: 28.3%;
+  top: 50%;
+  left: 25%;
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, left 500ms cubic-bezier(.26,2.5,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  left: 75%
+}
+
+/* Professional Portfolio Enhancements */
+.hero-section {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 1.5rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #10b981;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-tag {
+    background: #ecfdf5; /* emerald-50 */
+    color: #047857; /* emerald-700 */
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #d1fae5; /* emerald-100 */
+}
+
+.skill-category {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-left: 4px solid #10b981;
+}
+
+.skill-category h3 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.skill-item {
+    background: white;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    font-weight: 500;
+    color: #374151;
+}
+
+.contact-info {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation enhancements */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: #374151;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #10b981;
+}
+
+/* Typography improvements */
+h1, h2, h3 {
+    color: #1f2937;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+/* Button styles */
+.btn-primary {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #10b981;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: 2px solid #10b981;
+}
+
+.btn-secondary:hover {
+    background: #10b981;
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 600px) {
+    .toggle-slot {
+        width: 80px;
+        height: 40px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .project-card {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .skill-list {
+        grid-template-columns: 1fr;
+    }
+}
